@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3b8f0d02422477caf69e8446d90a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 3
+  EnemyHp: 10
 --- !u!1 &553035018
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 852755760}
   - component: {fileID: 852755759}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -483,6 +483,7 @@ GameObject:
   - component: {fileID: 1491190801}
   - component: {fileID: 1491190800}
   - component: {fileID: 1491190799}
+  - component: {fileID: 1491190802}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -564,6 +565,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 20.952, y: 0, z: 0}
+--- !u!114 &1491190802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491190798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e574d7d069ce32849890221347025418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetDistance: 3.5
+  currentCharacterIdx: 0
+  characters:
+  - {fileID: 852755758}
+  - {fileID: 1955547219}
+  enemy: {fileID: 1679939190}
+  offset: {x: 0, y: 1, z: 0}
 --- !u!1 &1679939190
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +597,7 @@ GameObject:
   - component: {fileID: 1679939192}
   - component: {fileID: 1679939191}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -682,7 +702,7 @@ GameObject:
   - component: {fileID: 1955547221}
   - component: {fileID: 1955547220}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Charge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
