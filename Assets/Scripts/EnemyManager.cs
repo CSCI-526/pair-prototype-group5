@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
 
-    private int health = 50;
+    private int health = 15;
     private int turnsToSkip;
 
     // Start is called before the first frame update
@@ -29,9 +29,11 @@ public class EnemyManager : MonoBehaviour
     }
 
     public int MakeDamage() {
-        if (turnsToSkip == 0) return new System.Random().Next(2, 6);
+        if (turnsToSkip == 0) {
+            turnsToSkip = new System.Random().Next(0, 3);
+            return new System.Random().Next(2, 6);
+        }
         --turnsToSkip;
-        if (turnsToSkip == 0) turnsToSkip = new System.Random().Next(0, 3);
         return 0;
     }
 }

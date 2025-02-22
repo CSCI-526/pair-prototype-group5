@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PartyManager : MonoBehaviour
 {
-    private int health = 10;
+    private int health = 30;
     private int currentCharge;
     private int currentCharacterIdx;
     public GameObject[] characters;
@@ -40,17 +40,21 @@ public class PartyManager : MonoBehaviour
         health = Mathf.Max(0, health - damage);
     }
 
-    private void Charge() {
+    public void Charge() {
         ++currentCharge;
     }
 
     public int MakeDamage() {
-        int damage = currentCharge;
+        int damage = 2 + currentCharge;
         currentCharge = Mathf.Max(1, currentCharge - 1);
         return damage;
     }
 
     public int CurrentHealth() {
         return health;
+    }
+
+    public int CurrentCharge() {
+        return currentCharge;
     }
 }
