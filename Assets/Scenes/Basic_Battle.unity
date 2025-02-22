@@ -122,6 +122,26 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &498026339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5172177079432079960, guid: 637757947f4641541b37100f15c28e89, type: 3}
+  m_PrefabInstance: {fileID: 4910790209385156943}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &498026340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498026339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b487d58e60c4c0785fe53b3eb2c051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characters:
+  - {fileID: 852755758}
+  - {fileID: 1955547219}
 --- !u!1 &553035018
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,13 +452,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e574d7d069ce32849890221347025418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetDistance: 3.5
-  currentCharacterIdx: 0
-  characters:
-  - {fileID: 852755758}
-  - {fileID: 1955547219}
+  party: {fileID: 498026339}
   enemy: {fileID: 1679939190}
-  offset: {x: 0, y: 1, z: 0}
 --- !u!1 &1679939190 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8664920981016539963, guid: 8f181808fecaec846a4b331e124eb840, type: 3}
@@ -504,7 +519,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5172177079432079960, guid: 637757947f4641541b37100f15c28e89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 498026340}
   m_SourcePrefab: {fileID: 100100000, guid: 637757947f4641541b37100f15c28e89, type: 3}
 --- !u!1001 &7834616704922304854
 PrefabInstance:

@@ -4,28 +4,26 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour {
 
-    // Start is called before the first frame update
-    public float offsetDistance;
-    public int currentCharacterIdx;
-    public GameObject[] characters;
+    public GameObject party;
     public GameObject enemy; 
-    public Vector3 offset;
+    private PartyManager partyManager;
+    private float offsetDistance = 3.5f;
+    private Vector3 offset = new Vector3(0, 1, 0);
 
+    // Start is called before the first frame update
     void Start() {
-        currentCharacterIdx = 0;
-        MoveToCharacter(currentCharacterIdx);
+        partyManager = party.GetComponent<PartyManager>();
+        GetCurrentCharacterView();
     }
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            currentCharacterIdx = (currentCharacterIdx + 1) % characters.Length;
-            MoveToCharacter(currentCharacterIdx);
-        }
+        GetCurrentCharacterView();
     }
 
-    void MoveToCharacter(int characterIdx) {
-        transform.position = characters[currentCharacterIdx].transform.position + offset;
+    void GetCurrentCharacterView() {
+        GameObject currentCharacter = partyManager.GetCurrentCharacter();
+        transform.position = currentCharacter.transform.position + offset;
         transform.LookAt(enemy.transform.position);
         transform.position -= transform.forward * offsetDistance;
     }
