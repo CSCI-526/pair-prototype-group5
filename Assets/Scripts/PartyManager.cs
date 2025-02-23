@@ -52,6 +52,7 @@ public class PartyManager : MonoBehaviour
 
     public void ActivateShield() {
         hasShield = true;
+        currentCharge = Mathf.Max(1, currentCharge - 1);
     }
 
     public int CurrentHealth() {
