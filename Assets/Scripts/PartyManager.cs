@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PartyManager : MonoBehaviour
 {
-    private int health = 30;
+    private int health = 15;
     private int currentCharge;
     private int currentCharacterIdx;
     public GameObject[] characters;

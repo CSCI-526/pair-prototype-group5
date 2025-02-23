@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
 
-    private int health = 15;
+    private int health = 30;
     private int turnsToSkip;
 
     // Start is called before the first frame update
