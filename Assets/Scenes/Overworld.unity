@@ -724,6 +724,7 @@ GameObject:
   - component: {fileID: 858814165}
   - component: {fileID: 858814164}
   - component: {fileID: 858814163}
+  - component: {fileID: 858814168}
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Untagged
@@ -823,12 +824,29 @@ Transform:
   m_GameObject: {fileID: 858814162}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 60.6, y: 1, z: 44.4}
+  m_LocalPosition: {x: 49.97, y: 1, z: 39.74}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &858814168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858814162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27a28874c6eb4551985307414009a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {x: 60, y: 1, z: 35}
+  - {x: 60, y: 1, z: 53}
+  - {x: 50, y: 1, z: 40}
+  - {x: 68, y: 1, z: 40}
 --- !u!1 &1115032078
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,6 +860,7 @@ GameObject:
   - component: {fileID: 1115032080}
   - component: {fileID: 1115032079}
   - component: {fileID: 1115032083}
+  - component: {fileID: 1115032084}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -929,7 +948,7 @@ Transform:
   m_GameObject: {fileID: 1115032078}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 61.4, y: 1, z: 83.3}
+  m_LocalPosition: {x: 26.7, y: 1, z: 93.2}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -947,6 +966,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb45552a5867e45ebad555e36ff326a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1115032084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115032078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27a28874c6eb4551985307414009a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {x: 40, y: 1, z: 82}
+  - {x: 30, y: 1, z: 75}
+  - {x: 38, y: 1, z: 58}
+  - {x: 27, y: 1, z: 93}
 --- !u!1001 &1758516324
 PrefabInstance:
   m_ObjectHideFlags: 0
