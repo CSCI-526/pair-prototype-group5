@@ -5,19 +5,14 @@ using UnityEngine;
 public class PartyManager : MonoBehaviour
 {
     private int health = 15;
-    private int currentCharge;
-    private int currentCharacterIdx;
+    private int currentCharge = 1;
+    private bool hasShield = false;
+    private int currentCharacterIdx = 0;
     public GameObject[] characters;
     
     // Start is called before the first frame update
     void Start()
     {
-        currentCharge = 1;
-        currentCharacterIdx = 0;
-        GameObject attack = characters[0];
-        GameObject charge = characters[1];
-        attack.transform.position = new Vector3(-2.5f, 0.5f, -8f);
-        charge.transform.position = new Vector3(2.5f, 0.5f, -8f); 
     }
 
     // Update is called once per frame
@@ -37,6 +32,11 @@ public class PartyManager : MonoBehaviour
     }
 
     public void TakeDamage(int damage) {
+        if (damage == 0) return;
+        if (hasShield) {
+            hasShield = false;
+            return;
+        }
         health = Mathf.Max(0, health - damage);
     }
 
@@ -50,11 +50,19 @@ public class PartyManager : MonoBehaviour
         return damage;
     }
 
+    public void ActivateShield() {
+        hasShield = true;
+    }
+
     public int CurrentHealth() {
         return health;
     }
 
     public int CurrentCharge() {
         return currentCharge;
+    }
+
+    public bool HasShield() {
+        return hasShield;
     }
 }

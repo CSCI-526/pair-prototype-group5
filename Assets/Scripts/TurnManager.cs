@@ -81,6 +81,9 @@ public class TurnManager : MonoBehaviour
         if (currentCharacter.name == "Charge") {
             turnStatusText.text = "You get 1 charge!";
             partyManager.Charge();
+        } else if (currentCharacter.name == "Shield") {
+            turnStatusText.text = "Shield activated!";
+            partyManager.ActivateShield();
         } else {
             int damage = partyManager.MakeDamage();
             turnStatusText.text = "Enemy takes " + damage.ToString() + " damage!";
@@ -109,7 +112,11 @@ public class TurnManager : MonoBehaviour
         if (damage == 0){
             turnStatusText.text = "Enemy skips his turn!";
         } else {
-            turnStatusText.text = "You take " + damage.ToString() + " damage!";
+            if (partyManager.HasShield()) {
+                turnStatusText.text = "Your shield absorbs " + damage.ToString() + " damage!";
+            } else {
+                turnStatusText.text = "You take " + damage.ToString() + " damage!";
+            }
         }
         partyManager.TakeDamage(damage);
 

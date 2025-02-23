@@ -13,6 +13,7 @@ public class PartyUI : MonoBehaviour
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI chargeText;
     public TextMeshProUGUI enemyHealthText;
+    public TextMeshProUGUI shieldText;
 
     void Start()
     {
@@ -26,5 +27,6 @@ public class PartyUI : MonoBehaviour
         healthText.text = "Health: " + partyManager.CurrentHealth();
         chargeText.text = "Charge: " + partyManager.CurrentCharge();
         enemyHealthText.text = "Health: " + enemyManager.CurrentHealth();
+        shieldText.text = "Shield: " + (partyManager.HasShield() ? "Yes" : "No");
     }
 }
